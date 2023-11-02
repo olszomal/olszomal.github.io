@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>CORS</title>
+</head>
 <body>
+
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+
+<script type="module">
+    const response = await fetch("https://cors.szurek.local/10/");
+    let json = await response.json();
+
+    if ("error" in json) {
+        alert(`Błąd: ${json['error']}`);
+    } else {
+        alert(`Sekret ${json['sekret']}.`);
+    }
+</script>
+
 </body>
 </html>
